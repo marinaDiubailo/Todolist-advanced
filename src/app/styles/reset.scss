@@ -1,8 +1,8 @@
-* {
-    padding: 0;
-    margin: 0;
-    border: 0;
-}
+// * {
+//     padding: 0;
+//     margin: 0;
+//     border: 0;
+// }
 
 *,
 *::before,
@@ -10,65 +10,65 @@
     box-sizing: border-box;
 }
 
-:focus,
-:active {
-    outline: none;
-}
+// :focus,
+// :active {
+//     outline: none;
+// }
 
-nav,
-footer,
-header,
-aside {
-    display: block;
-}
+// nav,
+// footer,
+// header,
+// aside {
+//     display: block;
+// }
 
-input,
-button,
-textarea,
-select {
-    font: inherit;
-}
+// input,
+// button,
+// textarea,
+// select {
+//     font: inherit;
+// }
 
-input::-ms-clear {
-    display: none;
-}
+// input::-ms-clear {
+//     display: none;
+// }
 
-button {
-    cursor: pointer;
-}
+// button {
+//     cursor: pointer;
+// }
 
-button::-moz-focus-inner {
-    padding: 0;
-    border: 0;
-}
+// button::-moz-focus-inner {
+//     padding: 0;
+//     border: 0;
+// }
 
-a,
-a:visited {
-    text-decoration: none;
-}
+// a,
+// a:visited {
+//     text-decoration: none;
+// }
 
-a:hover {
-    text-decoration: none;
-}
+// a:hover {
+//     text-decoration: none;
+// }
 
-a:focus,
-:active {
-    outline: none;
-}
+// a:focus,
+// :active {
+//     outline: none;
+// }
 
-li {
-    list-style: none;
-}
+// li {
+//     list-style: none;
+// }
 
-img {
-    vertical-align: top;
-}
+// img {
+//     vertical-align: top;
+// }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    font-weight: normal;
-}
+// h1,
+// h2,
+// h3,
+// h4,
+// h5,
+// h6 {
+//     font-weight: normal;
+// }
