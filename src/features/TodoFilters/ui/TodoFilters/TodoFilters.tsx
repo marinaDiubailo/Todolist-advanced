@@ -6,24 +6,25 @@ import cls from './TodoFilters.module.scss';
 
 interface TodoFiltersProps {
     className?: string;
-    onChangeFilter: (filter: FilterType) => void;
+    onChangeFilter: (filter: FilterType, todolistId: string) => void;
     filter: FilterType;
+    todolistId: string;
 }
 
 export const TodoFilters = memo((props: TodoFiltersProps) => {
-    const { className, onChangeFilter, filter } = props;
+    const { className, onChangeFilter, filter, todolistId } = props;
 
     const onAllClickHandler = useCallback(() => {
-        onChangeFilter('all');
-    }, [onChangeFilter]);
+        onChangeFilter('all', todolistId);
+    }, [onChangeFilter, todolistId]);
 
     const onActiveClickHandler = useCallback(() => {
-        onChangeFilter('active');
-    }, [onChangeFilter]);
+        onChangeFilter('active', todolistId);
+    }, [onChangeFilter, todolistId]);
 
     const onCompletedClickHandler = useCallback(() => {
-        onChangeFilter('completed');
-    }, [onChangeFilter]);
+        onChangeFilter('completed', todolistId);
+    }, [onChangeFilter, todolistId]);
 
     return (
         <div className={classNames('', {}, [className])}>

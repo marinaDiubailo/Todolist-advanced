@@ -5,11 +5,12 @@ import cls from './AddTodo.module.scss';
 
 interface AddTodoProps {
     className?: string;
-    onAddTodo: (title: string) => void;
+    onAddTodo: (title: string, todolistId: string) => void;
+    todolistId: string;
 }
 
 export const AddTodo = memo((props: AddTodoProps) => {
-    const { className, onAddTodo } = props;
+    const { className, onAddTodo, todolistId } = props;
     const [title, setTitle] = useState<string>('');
     const [error, setError] = useState<string | null>(null);
 
@@ -18,9 +19,9 @@ export const AddTodo = memo((props: AddTodoProps) => {
             setError('Should not be empty!');
             return;
         }
-        onAddTodo(title.trim());
+        onAddTodo(title.trim(), todolistId);
         setTitle('');
-    }, [onAddTodo, title]);
+    }, [onAddTodo, title, todolistId]);
 
     const onChangeHandler = useCallback(
         (event: ChangeEvent<HTMLInputElement>) => {

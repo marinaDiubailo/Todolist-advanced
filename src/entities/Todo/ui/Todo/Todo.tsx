@@ -6,24 +6,25 @@ import cls from './Todo.module.scss';
 
 interface TodoProps {
     className?: string;
+    todolistId: string;
     todo: ITodo;
-    removeTodo: (todoId: string) => void;
-    toggleStatus: (todoId: string, isDone: boolean) => void;
+    removeTodo: (todoId: string, todolistId: string) => void;
+    toggleStatus: (todoId: string, isDone: boolean, todolistId: string) => void;
 }
 
 export const Todo = memo((props: TodoProps) => {
-    const { className, todo, removeTodo, toggleStatus } = props;
+    const { className, todo, removeTodo, toggleStatus, todolistId } = props;
     const { title, isDone, id } = todo;
 
     const clickHandler = useCallback(() => {
-        removeTodo(id);
-    }, [removeTodo, id]);
+        removeTodo(id, todolistId);
+    }, [removeTodo, id, todolistId]);
 
     const toggleStatusHandler = useCallback(
         (event: ChangeEvent<HTMLInputElement>) => {
-            toggleStatus(id, event.currentTarget.checked);
+            toggleStatus(id, event.currentTarget.checked, todolistId);
         },
-        [id, toggleStatus],
+        [id, toggleStatus, todolistId],
     );
 
     return (
